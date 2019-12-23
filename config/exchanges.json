@@ -105,7 +105,7 @@
       47.079455
     ],
     "parsers": {
-      "exchange": "ENTSOE.fetch_exchange",
+      "exchange": "CH.fetch_exchange",
       "exchangeForecast": "ENTSOE.fetch_exchange_forecast"
     },
     "rotation": -90
@@ -644,7 +644,7 @@
       47.667048
     ],
     "parsers": {
-      "exchange": "ENTSOE.fetch_exchange",
+      "exchange": "CH.fetch_exchange",
       "exchangeForecast": "ENTSOE.fetch_exchange_forecast"
     },
     "rotation": 0
@@ -655,7 +655,7 @@
       46.7
     ],
     "parsers": {
-      "exchange": "ENTSOE.fetch_exchange",
+      "exchange": "CH.fetch_exchange",
       "exchangeForecast": "ENTSOE.fetch_exchange_forecast"
     },
     "rotation": -90
@@ -666,7 +666,7 @@
       46.113596
     ],
     "parsers": {
-      "exchange": "ENTSOE.fetch_exchange",
+      "exchange": "CH.fetch_exchange",
       "exchangeForecast": "ENTSOE.fetch_exchange_forecast"
     },
     "rotation": 180
