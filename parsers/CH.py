@@ -73,3 +73,9 @@ def fetch_exchange(zone_key1, zone_key2, session=None, target_datetime=None, log
 if __name__ == '__main__':
     print('fetch_exchange(CH, FR) ->')
     print(fetch_exchange('CH', 'FR'))
+    print('fetch_exchange(CH, DE) ->')
+    print(fetch_exchange('CH', 'DE'))
+    print('fetch_exchange(CH, IT-NO) ->')
+    print(fetch_exchange('CH', 'IT-NO'))
+    print('fetch_exchange(AT, CH) ->')
+    print(fetch_exchange('AT', 'CH'))
