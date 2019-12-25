@@ -2,8 +2,6 @@
 # -*- coding: utf-8 -*-
 
 import arrow
-import re
-import dateutil
 import requests
 import json
 
@@ -18,20 +16,17 @@ EXCHANGES_ID_MAPPING = {
 
 # We use the arrow direction to determine if we are exporting or importing energy
 ZONE_EXPORT_ARROW_DIRECTION = {
-    'DE': 'up',
+    'DE': 'top',
     'IT-NO': 'down',
     'FR': 'left',
     'AT': 'right'
 }
 
-def format_zone_keys(zone_key1, zone_key2, is_exporting):
-    return zone_key1 + '->' + zone_key2 if is_exporting else zone_key2 + '->' + zone_key1
-
 def is_exporting(zone_key, arrow_direction):
     return ZONE_EXPORT_ARROW_DIRECTION[zone_key] == arrow_direction
 
-def parse_flow(flow_string, is_exporting):
-    return float(flow_string.split(' ')[0])*(1 if is_exporting else -1)
+def parse_flow(flow_string):
+    return float(flow_string.split(' ')[0])
 
 def fetch_exchange(zone_key1, zone_key2, session=None, target_datetime=None, logger=None):
     """Requests the last known power exchange (in MW) between two zones
@@ -65,7 +60,7 @@ def fetch_exchange(zone_key1, zone_key2, session=None, target_datetime=None, log
     result = ({
         'sortedZoneKeys': key,
         'datetime': now,
-        'netFlow': parse_flow(x['text2'], is_exporting(non_ch_key, x['direction'])),
+        'netFlow': parse_flow(x['text2']) * (1 if is_exporting(non_ch_key, x['direction']) else -1)*(1 if key.startswith('CH') else -1),
         'source': 'swissgrid.ch'
     } for x in data if x['id'] == id)
     return list(result)
