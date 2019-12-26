@@ -1,0 +1,100 @@
+{
+    "config": {
+        "cacheDurationInSeconds": 10,
+        "asyncIntervalInSeconds": 10,
+        "isDynamic": true,
+        "scrollTop": 57,
+        "scrollLeft": 55,
+        "tablePosition": "top"
+    },
+    "data": {
+        "table": [
+            {
+                "id": "total",
+                "label": "Bilan Importation: 159 MW",
+                "value": "",
+                "mergeColumns": false,
+                "isLabelBold": false,
+                "isValueBold": false
+            },
+            {
+                "id": "refresh",
+                "label": "Les données décalées de 20 minutes",
+                "value": "",
+                "mergeColumns": false,
+                "isLabelBold": false,
+                "isValueBold": false
+            }
+        ],
+        "marker": [
+            {
+                "id": "de",
+                "x": 45,
+                "y": 13,
+                "text1": "DE",
+                "text2": "830 MW",
+                "textColor": "#000000",
+                "backgroundColor": "#ffffff",
+                "borderColor": "#000000",
+                "type": "locationArrow",
+                "direction": "top",
+                "rotation": null,
+                "opacity": 1,
+                "fontSizeDesktop": "24px",
+                "fontSizeTablet": "14px",
+                "fontSizePhone": "12px"
+            },
+            {
+                "id": "at",
+                "x": 90,
+                "y": 50,
+                "text1": "AT",
+                "text2": "59 MW",
+                "textColor": "#000000",
+                "backgroundColor": "#ffffff",
+                "borderColor": "#000000",
+                "type": "locationArrow",
+                "direction": "left",
+                "rotation": null,
+                "opacity": 1,
+                "fontSizeDesktop": "24px",
+                "fontSizeTablet": "14px",
+                "fontSizePhone": "12px"
+            },
+            {
+                "id": "it",
+                "x": 38,
+                "y": 88,
+                "text1": "IT",
+                "text2": "1304 MW",
+                "textColor": "#000000",
+                "backgroundColor": "#ffffff",
+                "borderColor": "#000000",
+                "type": "locationArrow",
+                "direction": "down",
+                "rotation": null,
+                "opacity": 1,
+                "fontSizeDesktop": "24px",
+                "fontSizeTablet": "14px",
+                "fontSizePhone": "12px"
+            },
+            {
+                "id": "fr",
+                "x": 12,
+                "y": 45,
+                "text1": "FR",
+                "text2": "2234 MW",
+                "textColor": "#000000",
+                "backgroundColor": "#ffffff",
+                "borderColor": "#000000",
+                "type": "locationArrow",
+                "direction": "right",
+                "rotation": null,
+                "opacity": 1,
+                "fontSizeDesktop": "24px",
+                "fontSizeTablet": "14px",
+                "fontSizePhone": "12px"
+            }
+        ]
+    }
+}

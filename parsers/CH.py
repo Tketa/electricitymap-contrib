@@ -28,6 +28,11 @@ def is_exporting(zone_key, arrow_direction):
 def parse_flow(flow_string):
     return float(flow_string.split(' ')[0])
 
+def get_data(session, logger):
+    s = session or requests.session()
+    json_data = json.loads(s.get(EXCHANGE_URL).text)
+    return json_data
+
 def fetch_exchange(zone_key1, zone_key2, session=None, target_datetime=None, logger=None):
     """Requests the last known power exchange (in MW) between two zones
     Arguments:
@@ -55,15 +60,15 @@ def fetch_exchange(zone_key1, zone_key2, session=None, target_datetime=None, log
     id = EXCHANGES_ID_MAPPING[key] 
 
     r = session or requests.session()
-    response = r.get(EXCHANGE_URL)
-    data = json.loads(response.text)['data']['marker']
+    response = get_data(session, logger)
+    data = response['data']['marker']
     result = ({
         'sortedZoneKeys': key,
         'datetime': now,
         'netFlow': parse_flow(x['text2']) * (1 if is_exporting(non_ch_key, x['direction']) else -1)*(1 if key.startswith('CH') else -1),
         'source': 'swissgrid.ch'
     } for x in data if x['id'] == id)
-    return list(result)
+    return next(result)
 
 if __name__ == '__main__':
     print('fetch_exchange(CH, FR) ->')
